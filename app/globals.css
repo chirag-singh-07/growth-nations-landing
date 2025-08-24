@@ -1,0 +1,228 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens for premium Growth Nations Web design */
+  --background: #f9fafb; /* Soft White */
+  --foreground: #1f2937; /* Dark Gray for text */
+  --card: rgba(255, 255, 255, 0.8); /* Glassmorphism effect */
+  --card-foreground: #1f2937; /* Text on cards */
+  --popover: rgba(255, 255, 255, 0.9); /* Light popover background */
+  --popover-foreground: #1f2937; /* Text on popovers */
+  --primary: #0038a8; /* Royal Blue for CTAs */
+  --primary-foreground: #ffffff; /* White text on primary buttons */
+  --secondary: #4caf50; /* Emerald Green for accents */
+  --secondary-foreground: #ffffff; /* White text on secondary buttons */
+  --muted: #e5e7eb; /* Light Gray for muted text */
+  --muted-foreground: #4b5563; /* Darker muted text */
+  --accent: #ffd700; /* Gold for highlights */
+  --accent-foreground: #1f2937; /* Dark text on accent backgrounds */
+  --destructive: #dc2626; /* Red for error messages */
+  --destructive-foreground: #ffffff; /* White text on destructive actions */
+  --border: rgba(0, 0, 0, 0.1); /* Light border for separation */
+  --input: #ffffff; /* Input fields background */
+  --ring: rgba(0, 56, 168, 0.3); /* Ring effect for focus states */
+  --chart-1: #4caf50; /* Emerald Green for charts */
+  --chart-2: #ffd700; /* Gold for charts */
+  --chart-3: #0038a8; /* Royal Blue for charts */
+  --chart-4: #e5e7eb; /* Light Gray for charts */
+  --chart-5: #1f2937; /* Dark Gray for charts */
+  --radius: 1rem; /* Increased radius for premium rounded corners */
+  --sidebar: rgba(255, 255, 255, 0.8); /* Glassmorphism sidebar */
+  --sidebar-foreground: #1f2937; /* Text on sidebar */
+  --sidebar-primary: #0038a8; /* Sidebar primary background */
+  --sidebar-primary-foreground: #ffffff; /* Text on primary sidebar */
+  --sidebar-accent: #4caf50; /* Sidebar accent color */
+  --sidebar-accent-foreground: #ffffff; /* Text on sidebar accent */
+  --sidebar-border: rgba(0, 0, 0, 0.1); /* Light border for sidebar */
+  --sidebar-ring: rgba(0, 56, 168, 0.3); /* Ring effect for sidebar */
+}
+
+.dark {
+  --background: #0f172a; /* Dark background */
+  --foreground: #f8fafc; /* Light text */
+  --card: rgba(15, 23, 42, 0.8); /* Dark glassmorphism */
+  --card-foreground: #f8fafc; /* Light text on dark cards */
+  --popover: rgba(15, 23, 42, 0.9); /* Dark popover */
+  --popover-foreground: #f8fafc; /* Light text on dark popovers */
+  --primary: #3b82f6; /* Lighter blue for dark mode */
+  --primary-foreground: #ffffff; /* White text */
+  --secondary: #10b981; /* Emerald green */
+  --secondary-foreground: #ffffff; /* White text */
+  --muted: #334155; /* Dark muted */
+  --muted-foreground: #94a3b8; /* Light muted text */
+  --accent: #fbbf24; /* Lighter gold for dark mode */
+  --accent-foreground: #0f172a; /* Dark text on accent */
+  --destructive: #ef4444; /* Red for errors */
+  --destructive-foreground: #ffffff; /* White text */
+  --border: rgba(255, 255, 255, 0.1); /* Light border */
+  --input: #1e293b; /* Dark input background */
+  --ring: rgba(59, 130, 246, 0.3); /* Blue ring */
+  --chart-1: #10b981; /* Emerald */
+  --chart-2: #fbbf24; /* Gold */
+  --chart-3: #3b82f6; /* Blue */
+  --chart-4: #64748b; /* Slate */
+  --chart-5: #f8fafc; /* Light */
+  --sidebar: rgba(15, 23, 42, 0.8); /* Dark sidebar */
+  --sidebar-foreground: #f8fafc; /* Light text */
+  --sidebar-primary: #3b82f6; /* Blue primary */
+  --sidebar-primary-foreground: #ffffff; /* White text */
+  --sidebar-accent: #10b981; /* Emerald accent */
+  --sidebar-accent-foreground: #ffffff; /* White text */
+  --sidebar-border: rgba(255, 255, 255, 0.1); /* Light border */
+  --sidebar-ring: rgba(59, 130, 246, 0.3); /* Blue ring */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Added premium font families */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Source Sans Pro", sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    /* Added gradient background for premium feel */
+    background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
+    min-height: 100vh;
+  }
+
+  /* Added glassmorphism utility classes */
+  .glass {
+    @apply backdrop-blur-md bg-white/80 border border-white/20 shadow-xl;
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-md bg-slate-900/80 border border-white/10 shadow-xl;
+  }
+
+  /* Added premium animation classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  /* Added fade-in animations for hero section */
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px rgba(0, 56, 168, 0.3);
+    }
+    to {
+      box-shadow: 0 0 30px rgba(0, 56, 168, 0.6);
+    }
+  }
+
+  /* Added new keyframes for fade animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Added premium typography styles */
+  .heading-premium {
+    font-family: var(--font-heading);
+    @apply font-bold tracking-tight;
+  }
+
+  .text-premium {
+    font-family: var(--font-body);
+    @apply leading-relaxed;
+  }
+}
