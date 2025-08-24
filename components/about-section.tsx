@@ -33,7 +33,7 @@ export function AboutSection() {
           animateCounter(5, "years")
         }
       },
-      { threshold: 0.3 },
+      { threshold: 0.2 },
     )
 
     if (sectionRef.current) {
